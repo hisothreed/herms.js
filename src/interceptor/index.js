@@ -28,27 +28,24 @@ class Interceptor {
   }
 
   async beginPreChain(request) {
-    if (this._preHooksQueue.length > 0) {
+    while(this._preHooksQueue.length > 0) {
       await this._preHooksQueue.shift()(request);
-    } else {
-      return request;
     }
+    return request;
   }
 
   async beginSuccessChain(json) {
-    if (this._postHooksQueue.length > 0) {
+    while(this._postHooksQueue.length > 0) {
       await this._postHooksQueue.shift()(json);
-    } else {
-      return Promise.resolve(json);
     }
+    return Promise.resolve(json);
   }
 
   async beginErrorChain(json) {
-    if (this._errorHooksQueue.length > 0) {
+    while(this._errorHooksQueue.length > 0) {
       this._errorHooksQueue.shift()(json);
-    } else {
-      return json
-    }
+    } 
+    return json
   }
 }
 

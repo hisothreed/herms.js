@@ -9,7 +9,7 @@ export default function options(requestConfig) {
   _options.hooks.preRequest = _.isFunction(requestConfig.preRequest) ? requestConfig.preRequest : null;
   _options.hooks.onError = _.isFunction(requestConfig.onError) ? requestConfig.onError : null;
   
-  let headers = prepareHeaders();
+  let headers = prepareHeaders(requestConfig, this.constructor.defaults);
   _options.headers = headers;
 
   _options.baseUrl = requestConfig.baseUrl || this.constructor.defaults.baseUrl;

@@ -22,7 +22,6 @@ class Hermes {
     let options = optionsHandler.call(this, requestOptions);
     let request = new CustomRequest(options);
     Interceptor.handleHooks(options.hooks);
-
     return perform(request);
   }
 }

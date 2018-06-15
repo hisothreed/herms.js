@@ -1,4 +1,5 @@
 import Interceptor from "../interceptor";
+import fetch from "node-fetch";
 
 export default async function Perform(request) {
   Interceptor.beginPreChain(request);

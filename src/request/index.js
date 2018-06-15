@@ -1,3 +1,5 @@
+import { Request } from "node-fetch";
+
 class CustomRequest {
   constructor(options) {
     this.prepareRequest(options);
