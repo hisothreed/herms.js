@@ -1,0 +1,12 @@
+{
+  "name": "hermesjs",
+  "version": "0.0.1",
+  "description": "Http Client built with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "run": "node ./index.js"
+  },
+  "author": "Hussein alsaadi",
+  "license": "ISC"
+}
