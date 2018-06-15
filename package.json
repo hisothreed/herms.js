@@ -1,12 +1,26 @@
 {
-  "name": "hermesjs",
+  "name": "@hussein_alsaadi/hermes.js",
   "version": "0.0.1",
   "description": "Http Client built with Javascript",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "",
-    "run": "node ./index.js"
+    "run": "node ./dist/main.js",
+    "dev": "webpack --mode development --module-bind js=babel-loader",
+    "build": "webpack --mode production --module-bind js=babel-loader"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hisothreed/herms.js.git"
   },
   "author": "Hussein alsaadi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.7"
+  }
 }
